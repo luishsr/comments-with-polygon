@@ -16,11 +16,15 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
-module.exports = {
+ module.exports = {
   solidity: "0.8.4",
   networks: {
     hardhat: {
       chainId: 1337,
+    },
+    matic: {
+      url: "https://matic-mumbai.chainstacklabs.com",
+      accounts: ["1d00ad066e474a52cff9de4ecceb64ce3d2e624f8553df58edfeaa64d3cf2aa9"],
     },
   },
 };

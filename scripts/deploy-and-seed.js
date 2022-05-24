@@ -11,12 +11,16 @@ async function main() {
   //
   // If this script is run directly using `node` you may want to call compile
   // manually to make sure everything is compiled
-  // await hre.run('compile');
+  console.log("Called script seed")
+  await hre.run('compile');
 
   // We get the contract to deploy
-  const CommentsContract = await hre.ethers.getContractFactory("Comments");
+  console.log("get Factory")
+  const CommentsContract = await ethers.getContractFactory("Comments");
+  console.log("deploy")
   const contract = await CommentsContract.deploy();
 
+  console.log("await deployed")
   await contract.deployed();
 
   const tx1 = await contract.addComment("my-blog-post", "My first comment");
